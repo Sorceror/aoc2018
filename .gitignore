@@ -1,0 +1,12 @@
+/classes
+/checkouts
+/target
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+\.idea/
+
+aoc2018\.iml

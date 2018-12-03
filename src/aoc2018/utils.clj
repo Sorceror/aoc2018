@@ -5,3 +5,6 @@
     (slurp (clojure.java.io/resource input-file))
     (clojure.string/split-lines)
     (map #(clojure.string/trim %))))
+
+(defn s->i [s]
+  (read-string s))

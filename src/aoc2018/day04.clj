@@ -1,4 +1,4 @@
-(ns aoc2018.day4
+(ns aoc2018.day04
   (require [aoc2018.utils :as u]))
 
 ; --- Day 4: Repose Record ---

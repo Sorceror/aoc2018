@@ -2,7 +2,8 @@
 
 (defn resource->strings [input-file]
   (->>
-    (slurp (clojure.java.io/resource input-file))
+    (clojure.java.io/resource input-file)
+    (slurp)
     (clojure.string/split-lines)
     (map #(clojure.string/trim %))))
 

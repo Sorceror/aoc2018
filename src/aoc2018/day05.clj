@@ -58,11 +58,11 @@
 (defn find-shortest-reduced-size [polymer-seq]
   (->>
       (range (int \A) (int \Z))
-      (map #(->> %
-                 (char)
-                 (remove-from-polymer polymer-seq)
-                 (run-reaction-loop)
-                 (count)))
+      (pmap #(->> %
+                  (char)
+                  (remove-from-polymer polymer-seq)
+                  (run-reaction-loop)
+                  (count)))
       (reduce min)))
 
 (comment

@@ -69,7 +69,7 @@
 ; --- Part Two ---
 ; On the other hand, if the coordinates are safe, maybe the best you can do is try to find a region near as many coordinates as possible.
 ;
-;What is the size of the region containing all locations which have a total distance to all given coordinates of less than 10000?
+; What is the size of the region containing all locations which have a total distance to all given coordinates of less than 10000?
 
 (defn calculate-all-distances [p id-map]
   (->>

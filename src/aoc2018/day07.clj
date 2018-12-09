@@ -28,7 +28,7 @@
 (defn calculate-roots [edges]
   (let [start-vs (into #{} (map first edges))
         end-vs (into #{} (map second edges))]
-    (set/difference start-vs end-vs)))
+    (into (sorted-set) (set/difference start-vs end-vs))))
 
 (defn find-available-for-vertex [v edges]
   (->> edges

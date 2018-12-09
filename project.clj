@@ -4,6 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [spyscope "0.1.6"]]
+                 [spyscope "0.1.6"]
+                 [org.clojure/data.finger-tree "0.0.3"]]
   :injections [(require 'spyscope.core)])
 

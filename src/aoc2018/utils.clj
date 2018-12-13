@@ -1,19 +1,23 @@
 (ns aoc2018.utils)
 
-(defn string->strings [strs]
+(defn string->strings [trim-opt strings]
   (->>
-    strs
+    strings
     (clojure.string/split-lines)
-    (map #(clojure.string/trim %))))
+    (#(if (true? trim-opt)
+        (map (fn [s] clojure.string/trim s) %)
+        %))))
 
 (defn s->i [s]
   (read-string s))
 
-(defn resource->strings [input-file]
-  (->>
-      (clojure.java.io/resource input-file)
-      (slurp)
-      (string->strings)))
+(defn resource->strings
+  ([input-file] (resource->strings input-file true))
+  ([input-file trim-opt]
+   (->>
+       (clojure.java.io/resource input-file)
+       (slurp)
+       (string->strings trim-opt))))
 
 (defn resource->ints [input-file]
   (->>

@@ -11,12 +11,14 @@
 (defn s->i [s]
   (read-string s))
 
+(defn resource->single-string [input-file]
+    (slurp (clojure.java.io/resource input-file)))
+
 (defn resource->strings
   ([input-file] (resource->strings input-file true))
   ([input-file trim-opt]
    (->>
-       (clojure.java.io/resource input-file)
-       (slurp)
+       (resource->single-string input-file)
        (string->strings trim-opt))))
 
 (defn resource->ints [input-file]
